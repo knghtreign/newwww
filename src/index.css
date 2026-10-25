@@ -1,0 +1,114 @@
+@import "tailwindcss";
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Outfit', 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    color: #232a25;
+    background-color: #fbf9f5;
+    letter-spacing: -0.01em;
+  }
+}
+
+.font-serif-clinic {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+.font-script {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-style: italic;
+}
+
+/* Hide scrollbar for clean carousels while keeping scrollability */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* 1. Slide Up Keyframes */
+@keyframes slideUpIn {
+  from {
+    opacity: 0;
+    transform: translateY(45px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 2. Slide Down Keyframes */
+@keyframes slideDownIn {
+  from {
+    opacity: 0;
+    transform: translateY(-35px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 3. Pop Up Keyframes */
+@keyframes popUpIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.84) translateY(18px);
+  }
+  70% {
+    opacity: 1;
+    transform: scale(1.02) translateY(-2px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* 4. Fade Up Keyframes */
+@keyframes fadeUpIn {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* CSS Animation Utility Classes */
+.animate-slide-up {
+  animation: slideUpIn 0.85s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-slide-down {
+  animation: slideDownIn 0.75s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-pop-up {
+  animation: popUpIn 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.15) forwards;
+}
+
+.animate-fade-up {
+  animation: fadeUpIn 0.85s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Custom subtle scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-track {
+  background: #f4f0e8;
+}
+::-webkit-scrollbar-thumb {
+  background: #c7beaf;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #a99e8d;
+}
